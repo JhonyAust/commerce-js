@@ -12,7 +12,7 @@ const CartProvider = ({ children }) => {
 
   useEffect(() => {
     const total = cart.reduce((accumulator, currentItem) => {
-      return accumulator + currentItem.price * currentItem.amount;
+      return accumulator + currentItem.price.raw * currentItem.amount;
     }, 0);
     setTotal(total);
   });
