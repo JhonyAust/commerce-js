@@ -10,9 +10,11 @@ const ProductDetails = () => {
   const { products } = useContext(ProductContext);
 
   //get the single product based on id
+  
   const product = products.find((item) => {
-    return item.id === parseInt(id);
+    return item.id === id;
   });
+  console.log(id,'Hello')
 
   // if product is not found
   if (!product) {
@@ -25,6 +27,7 @@ const ProductDetails = () => {
 
   // destructure product
   const { image: { url: imageUrl }, name, price,description } = product;
+  console.log(imageUrl,name,price,description)
   return (
     <section className="pt-[450px] md:pt-32 pb-[400px] md:pb-12 lg:py-32 h-screen flex items-center">
       <div className="container mx-auto">
